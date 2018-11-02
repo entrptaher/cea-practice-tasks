@@ -16,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/Jobayer-Ahmed/taher-task-json-format-changing/issues"
   },
-  "homepage": "https://github.com/Jobayer-Ahmed/taher-task-json-format-changing#readme"
+  "homepage": "https://github.com/Jobayer-Ahmed/taher-task-json-format-changing#readme",
+  "dependencies": {
+    "readline": "^1.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  }
 }

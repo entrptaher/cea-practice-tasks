@@ -83,25 +83,25 @@ module.exports = function cleaner(input) {
       },
       actionInfo: {
         loginInfo: {
-          authEnabled: '',
-          authField: '',
-          authUrl: '',
-          authUserField: '',
-          authPasswordField: '',
-          authClickBtn: '',
+          authEnabled: input.params.loginInfo.auth_enabled,
+          authField: input.params.loginInfo.auth_field,
+          authUrl: input.params.loginInfo.auth_url,
+          authUserField: input.params.loginInfo.auth_userField,
+          authPasswordField: input.params.loginInfo.auth_passwordField,
+          authClickBtn: input.params.loginInfo.auth_clickBtn,
 
           // Need to encrypt two-ways so it's not visible anywhere
           // except when the scraper reads it or the extension
-          authUser: '',
-          authPassword: '',
+          authUser: input.params.loginInfo.auth_user,
+          authPassword: input.params.loginInfo.auth_password,
         },
         searchInfo: {
-          searchEnabled: 0,
-          showSearchField: 0, // for dashboard/extension usage
-          searchUrl: '',
-          searchField: '',
-          searchText: '',
-          searchBtn: '',
+          searchEnabled: input.params.searchInfo.searchEnabled0,
+          showSearchField: input.params.searchInfo.showSearchField, // for dashboard/extension usage
+          searchUrl: input.params.searchInfo.searchUrl,
+          searchField: input.params.searchInfo.searchField,
+          searchText: input.params.searchInfo.searchText,
+          searchBtn: input.params.searchInfo.searchBtn,
         },
       },
       scheduleInfo: {

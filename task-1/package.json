@@ -4,7 +4,8 @@
   "description": "Rules: - raw.txt তে প্রতিটা লাইণে একটা করে json ডাটা আছে। - আলাদা করে প্রতিটা লাইন তিনটা করে {title}.json ফাইলে সেভ হবে।  - ফাইল ও ফোল্ডারের নাম kebab-case হবে। - json ডাটা সব camelCase হবে। - title এর পরিবর্তে _id দেয়ার অপশন থাকবে। - কোড পুরোপুরি কমেন্টেড হবে। - mocha/chai দিয়ে টেস্টেড হতে হবে। - Async হতে হবে। প্রতিটার প্রগ্রেস আলাদা করে দেখাবে। - একই নামের দুইটা ফাইল থাকলে নামের শেষে 1-2-3 এমন থাকবে।",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "solution": "babel-node solutions/solution.js"
   },
   "repository": {
     "type": "git",

@@ -8,8 +8,11 @@ module.exports = function cleaner(input) {
     a[i].css_args = '';
   });
 
+  return input;
+
   // OUTPUT SCHEMA
   const output = {
+    _id: input._id,
     uuid: input.uuid,
     user: input.userID,
     content: '',
@@ -43,7 +46,7 @@ module.exports = function cleaner(input) {
         },
       },
       scrapingInfo: {
-        cacheImage: input.params.instanceOptions.cacheImage,
+        cacheImage: input.params.instanceOptions?.cacheImage,
         selectorArray: [
           {
             title: input.params.data.selectorArray[0].field, // title of selector

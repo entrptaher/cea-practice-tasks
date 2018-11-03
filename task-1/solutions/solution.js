@@ -10,18 +10,12 @@ const lineReader = require('readline').createInterface({
 });
 const cleaner = require('./cleaner');
 
-const baseJSON = [];
 // asynchronously processes all lines
 lineReader.on('line', (line) => {
-  console.log('Current Input', baseJSON.length);
   // cleanup and format data properly
   // Every line is a JSON object exported from mongoDB
   const newData = cleaner(JSON.parse(line));
+  console.log(`Processing, ${newData.uuid}`)
   // save the data
-  baseJSON.push(newData);
-});
-lineReader.on('close', () => {
-  console.log('Total Processed', baseJSON.length);
-  // write on disk only after all lines are processed
-  fs.writeFileSync(`${outputDir}/output.json`, JSON.stringify(baseJSON, true, 2));
+  fs.writeFileSync(`${outputDir}/${newData.uuid}.json`, JSON.stringify(newData, true, 2));
 });

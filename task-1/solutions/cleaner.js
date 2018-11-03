@@ -8,8 +8,6 @@ module.exports = function cleaner(input) {
     a[i].css_args = '';
   });
 
-  return input;
-
   // OUTPUT SCHEMA
   const output = {
     _id: input._id,
@@ -46,7 +44,7 @@ module.exports = function cleaner(input) {
         },
       },
       scrapingInfo: {
-        cacheImage: input.params.instanceOptions?.cacheImage,
+        cacheImage: input.params.instanceOptions.cacheImage,
         selectorArray: [
           {
             title: input.params.data.selectorArray[0].field, // title of selector
@@ -68,7 +66,7 @@ module.exports = function cleaner(input) {
         scrappingType: input.params.data.scrappingType.type,
       },
       paginationInfo: {
-        paginationMode: '',
+        paginationMode: input.params.data.mode,
         nextSelector: {
           value: input.params.data.next_selector,
           parent: input.params.data.next_selector_parent,
@@ -79,10 +77,10 @@ module.exports = function cleaner(input) {
         haltOnResult: input.params.data.HaltOnResult,
       },
       deeplinkInfo: {
-        linkList: [],
-        instance: '',
-        field: '',
-        searchFor: '',
+        linkList: input.params.data.link_list,
+        instance: input.params.data.deeplinkInstance,
+        field: input.params.data.deeplinkfield,
+        searchFor: input.params.data.deeplinkSearchFor,
       },
       actionInfo: {
         loginInfo: {
@@ -108,40 +106,41 @@ module.exports = function cleaner(input) {
         },
       },
       scheduleInfo: {
-        enabled: 0,
-        interval: '',
-        intervalText: '',
-        intervalType: '',
+        selectedIndex: input.params.scheduled.selected_index, // not sure where it's being used
+        enabled: input.params.scheduled.enabled,
+        interval: input.params.scheduled.interval,
+        intervalText: input.params.scheduled.intervalText,
+        intervalType: input.params.scheduled.intervalType,
       },
       resultAddons: {
         baseResultModifier: {
-          sort: 0,
-          deduplicate: 0,
+          sort: input.addonInfo.sort,
+          deduplicate: input.addonInfo.deduplicate,
           showOnlyOne: {
-            enabled: 0,
-            siteUrl: '',
-            index: 0,
+            enabled: input.addonInfo.showOnlyOne.enabled,
+            siteUrl: input.addonInfo.showOnlyOne.siteUrl,
+            index: input.addonInfo.showOnlyOne.index,
           },
         },
         filterInfo: {
           contentFilter: [
             {
-              enabled: 0,
-              group: '',
-              id: '',
-              data: '',
+              enabled: input.filterdata[0].filter_enabled,
+              group: input.filterdata[0].filtergroup,
+              id: input.filterdata[0].filterid,
+              data: input.filterdata[0].filterdata,
             },
           ],
         },
         rssCustomizationInfo: {
           properties: {
-            title: '',
-            description: '',
-            image: '',
-            link: '',
-            author: '',
-            comments: '',
-            resultLimit: 0, // resultLimit sounds better?
+            title: input.rssfielddata.properties.title,
+            description: input.rssfielddata.properties.description,
+            image: input.rssfielddata.properties.image,
+            link: input.rssfielddata.properties.link,
+            author: input.rssfielddata.properties.author,
+            comments: input.rssfielddata.properties.comments,
+            resultLimit: input.rssfielddata.properties.limitresult, // resultLimit sounds better?
           },
         },
       },

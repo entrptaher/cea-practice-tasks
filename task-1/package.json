@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Jobayer-Ahmed/taher-task-json-format-changing#readme",
   "dependencies": {
+    "generate-schema": "^2.6.0",
     "readline": "^1.3.0"
   },
   "devDependencies": {
